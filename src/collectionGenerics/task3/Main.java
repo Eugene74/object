@@ -14,15 +14,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import static java.util.Collections.sort;
-
-
 public class Main {
     public static void main(String[] args) throws IOException {
         File file = new File("texttask3.txt");
         char[] chars = readFile(file);
         ArrayList<AlphabetCharContainer> alphabetCharList = getAlphabetChars(chars);
-        //   sort(alphabetCharList, new MyComparator<AlphabetCharClass>());
+        alphabetCharList.sort(new MyComparator());
         for (AlphabetCharContainer a : alphabetCharList) {
             System.out.println(a.getCharacter() + " -> count:  " + a.getRepeatabilityCharacter());
         }
