@@ -19,7 +19,7 @@ public class Main {
         File file = new File("texttask3.txt");
         char[] chars = readFile(file);
         ArrayList<AlphabetCharContainer> alphabetCharList = getAlphabetChars(chars);
-        alphabetCharList.sort(new MyComparator());
+      //  alphabetCharList.sort(new MyComparator());
         for (AlphabetCharContainer a : alphabetCharList) {
             System.out.println(a.getCharacter() + " -> count:  " + a.getRepeatabilityCharacter());
         }
@@ -29,6 +29,7 @@ public class Main {
         Set<AlphabetCharContainer> set = new HashSet<>();
         for (char aChar : chars) {
             if (Character.isLetter(aChar)) {
+               //  aChar = Character.toLowerCase(aChar);
                 AlphabetCharContainer charClass = new AlphabetCharContainer();
                 charClass.setCharacter(aChar);
                 set.add(charClass);
@@ -37,7 +38,7 @@ public class Main {
         ArrayList<AlphabetCharContainer> arrayList = new ArrayList<>(set);
         for (Character aChar : chars) {
             if (Character.isLetter(aChar)) {
-                // currentChar = Character.toLowerCase(currentChar);
+               // aChar = Character.toLowerCase(aChar);
                 for (AlphabetCharContainer a : arrayList) {
                     if (a.getCharacter() == aChar) {
                         a.setRepeatabilityCharacter(1);
