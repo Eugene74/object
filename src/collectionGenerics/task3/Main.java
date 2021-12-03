@@ -21,27 +21,27 @@ public class Main {
     public static void main(String[] args) throws IOException {
         File file = new File("texttask3.txt");
         char[] chars = readFile(file);
-        ArrayList<AlphabetCharClass> alphabetCharList = getAlphabetChars(chars);
+        ArrayList<AlphabetCharContainer> alphabetCharList = getAlphabetChars(chars);
         //   sort(alphabetCharList, new MyComparator<AlphabetCharClass>());
-        for (AlphabetCharClass a : alphabetCharList) {
+        for (AlphabetCharContainer a : alphabetCharList) {
             System.out.println(a.getCharacter() + " -> count:  " + a.getRepeatabilityCharacter());
         }
     }
 
-    private static ArrayList<AlphabetCharClass> getAlphabetChars(char[] chars) {
-        Set<AlphabetCharClass> set = new HashSet<>();
+    private static ArrayList<AlphabetCharContainer> getAlphabetChars(char[] chars) {
+        Set<AlphabetCharContainer> set = new HashSet<>();
         for (char aChar : chars) {
             if (Character.isLetter(aChar)) {
-                AlphabetCharClass charClass = new AlphabetCharClass();
+                AlphabetCharContainer charClass = new AlphabetCharContainer();
                 charClass.setCharacter(aChar);
                 set.add(charClass);
             }
         }
-        ArrayList<AlphabetCharClass> arrayList = new ArrayList<>(set);
+        ArrayList<AlphabetCharContainer> arrayList = new ArrayList<>(set);
         for (Character aChar : chars) {
             if (Character.isLetter(aChar)) {
                 // currentChar = Character.toLowerCase(currentChar);
-                for (AlphabetCharClass a : arrayList) {
+                for (AlphabetCharContainer a : arrayList) {
                     if (a.getCharacter() == aChar) {
                         a.setRepeatabilityCharacter(1);
                     }

@@ -3,7 +3,7 @@ package collectionGenerics.task3;
 
 import java.util.Objects;
 
-public class AlphabetCharClass implements Comparable<AlphabetCharClass> {
+public class AlphabetCharContainer implements Comparable<AlphabetCharContainer> {
     private Character character;
     private long repeatabilityCharacter = 0;
 
@@ -24,7 +24,7 @@ public class AlphabetCharClass implements Comparable<AlphabetCharClass> {
     }
 
     @Override
-    public int compareTo(AlphabetCharClass o) {
+    public int compareTo(AlphabetCharContainer o) {
         return this.getCharacter().compareTo(o.getCharacter());
     }
 
@@ -32,7 +32,7 @@ public class AlphabetCharClass implements Comparable<AlphabetCharClass> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AlphabetCharClass that = (AlphabetCharClass) o;
+        AlphabetCharContainer that = (AlphabetCharContainer) o;
         return character.equals(that.character);
     }
 
